@@ -436,3 +436,130 @@ body {
     display: none;
   }
 }
+
+/* =========================================
+   AJUSTE PROPORCIONAL DO LIVRO
+   Escala: 1.447x
+========================================= */
+
+@media (min-width: 601px) {
+  /* Páginas */
+  .page {
+    box-shadow: inset 0 0 32px #5c41231f;
+  }
+
+  .page-right {
+    inset: 10px 12px 10px 0;
+  }
+
+  .page h2 {
+    margin: 20px 0;
+    font-size: clamp(1.95rem, 4.34vw, 4.05rem);
+  }
+
+  .page p {
+    max-width: 420px;
+    font-size: clamp(0.84rem, 1.52vw, 1.2rem);
+  }
+
+  .kicker {
+    font-size: clamp(0.61rem, 1.16vw, 0.87rem);
+  }
+
+  .number {
+    font-size: 1.01rem;
+  }
+
+  /* Capa */
+  .leaf-cover .leaf_face {
+    border-width: 10px;
+  }
+
+  .leaf-cover .leaf_face-front,
+  .leaf-cover .leaf_face-back {
+    box-shadow:
+      inset 0 0 0 3px rgba(190, 145, 86, 0.35),
+      inset 0 0 51px rgba(0, 0, 0, 0.35);
+  }
+
+  .cover_frame {
+    border-width: 1.45px;
+    outline-offset: 9px;
+    padding: 17px;
+  }
+
+  .ornament {
+    font-size: 1.74rem;
+    margin-bottom: 14px;
+  }
+
+  .cover_kicker {
+    font-size: clamp(0.55rem, 1.09vw, 0.84rem);
+  }
+
+  .cover_frame h2 {
+    margin: 26px 0;
+    font-size: clamp(2.89rem, 7.24vw, 6.08rem);
+  }
+
+  .rule {
+    width: 55px;
+    margin: 7px 0 17px;
+  }
+
+  .cover_frame p {
+    font-size: clamp(0.84rem, 1.45vw, 1.19rem);
+  }
+
+  .year {
+    margin-top: 17px;
+    font-size: 0.8rem;
+  }
+
+  /* Conteúdo mais denso */
+  .page-dense h2 {
+    margin: 12px 0;
+    font-size: clamp(1.45rem, 3.04vw, 2.46rem);
+  }
+
+  .page-dense p {
+    margin: 9px 0;
+    font-size: clamp(0.8rem, 1.38vw, 1.1rem);
+    line-height: 1.5;
+  }
+
+  .fields {
+    margin-top: 14px;
+    gap: 10px;
+  }
+
+  .fields dt {
+    font-size: clamp(0.58rem, 1.01vw, 0.78rem);
+  }
+
+  .fields dd {
+    margin-top: 3px;
+    font-size: clamp(0.8rem, 1.38vw, 1.1rem);
+  }
+
+  .skills {
+    gap: 3px;
+  }
+
+  .presentation {
+    gap: 26px;
+  }
+
+  .photo {
+    margin: 12px 0 6px;
+  }
+
+  .presentation-text > .eyebrow {
+    font-size: clamp(0.55rem, 1.09vw, 0.84rem);
+  }
+
+  /* Legenda abaixo do livro */
+  .book-caption {
+    font-size: 0.84rem;
+  }
+}
