@@ -67,10 +67,17 @@ body {
   top: 0;
   width: 100%;
   height: 100vh;
+  height: 100svh;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   place-items: center;
   perspective: 1800px;
   perspective-origin: 50% 48%;
+}
+/* Camada externa: só ela move a câmera (mobile). Não interfere nas transformações do livro. */
+.book-camera {
+  position: relative;
+  transform-style: preserve-3d;
 }
 .book {
   position: relative;
@@ -123,7 +130,8 @@ body {
 .page {
   position: absolute;
   min-width: 0;
-  padding: 8% 7%;
+  padding: 7% 7% 11%;
+  container-type: inline-size; /* 1cqw = 1% da largura da página: tudo escala com o livro */
   color: #392b20;
   overflow: hidden;
   background: linear-gradient(90deg, #d8c8a7, #eee2c7 12%, #e7d9bb);
@@ -136,37 +144,6 @@ body {
 .page-right {
   inset: 7px 8px 7px 0;
   background: linear-gradient(90deg, #e5d7b9, #f0e5cc 15%, #dfd0af);
-}
-.kicker {
-  color: #92764f;
-  letter-spacing: 0.2em;
-  font-size: clamp(0.42rem, 0.8vw, 0.6rem);
-  font-weight: 600;
-}
-.page h2 {
-  margin: 14px 0;
-  font:
-    500 clamp(1.35rem, 3vw, 2.8rem)/0.98 "Cormorant Garamond",
-    serif;
-}
-.page h2 em {
-  color: #805337;
-}
-.page p {
-  max-width: 290px;
-  color: #6f5b43;
-  font:
-    400 clamp(0.58rem, 1.05vw, 0.83rem)/1.65 "Cormorant Garamond",
-    serif;
-}
-.number {
-  position: absolute;
-  right: 9%;
-  bottom: 7%;
-  color: #987e58;
-  font:
-    500 0.7rem "Cormorant Garamond",
-    serif;
 }
 /* Folha articulada na lombada (borda esquerda da metade direita).
    Frente = capa de couro; verso = página esquerda do livro aberto. */
@@ -228,9 +205,12 @@ body {
 .leaf:not(.leaf-cover) .leaf_face-back .page-left {
   inset: 7px 0 7px 7px;
 }
+/* ===== Capa: tudo proporcional à largura da moldura (1cqw = 1% dela) ===== */
 .cover_frame {
+  container-type: inline-size;
   width: 76%;
   height: 78%;
+  padding: 3%;
   border: 1px solid #caa0639e;
   outline: 1px solid #caa0633d;
   outline-offset: 6px;
@@ -240,42 +220,42 @@ body {
   justify-content: center;
   text-align: center;
   color: #d9b77d;
-  padding: 12px;
   background: radial-gradient(ellipse at center, #965b3233, transparent 70%);
 }
 .ornament {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  font-size: 7cqw;
+  margin-bottom: 4cqw;
 }
 .cover_kicker {
+  font-size: 3cqw;
   letter-spacing: 0.2em;
-  font-size: clamp(0.38rem, 0.75vw, 0.58rem);
 }
 .cover_frame h2 {
-  margin: 18px 0;
+  margin: 7cqw 0;
   color: #f0d6a7;
   font:
-    500 clamp(2rem, 5vw, 4.2rem)/0.8 "Cormorant Garamond",
+    500 24cqw/0.82 "Cormorant Garamond",
     serif;
 }
 .cover_frame h2 em {
   font-weight: 400;
 }
 .rule {
-  width: 38px;
+  width: 14cqw;
   height: 1px;
-  margin: 5px 0 12px;
+  margin: 1.5cqw 0 4cqw;
   background: #b58b52;
 }
 .cover_frame p {
+  margin: 0;
   color: #c8a777;
   font:
-    400 clamp(0.58rem, 1vw, 0.82rem)/1.5 "Cormorant Garamond",
+    400 4.6cqw/1.5 "Cormorant Garamond",
     serif;
 }
 .year {
-  margin-top: 12px;
-  font-size: 0.55rem;
+  margin-top: 5cqw;
+  font-size: 3cqw;
   letter-spacing: 0.2em;
 }
 .book-caption {
@@ -285,72 +265,63 @@ body {
   color: #907b61;
   letter-spacing: 0.18em;
   font:
-    600 0.58rem "DM Sans",
+    600 0.75rem "DM Sans",
     sans-serif;
 }
 .afterword {
   min-height: 85vh;
 }
-@media (max-width: 600px) {
-  .book {
-    width: 90vw;
-  }
-  .page {
-    padding: 7% 6%;
-  }
-  .page h2 {
-    font-size: clamp(1.05rem, 5vw, 1.7rem);
-  }
-  .page p {
-    font-size: clamp(0.48rem, 2vw, 0.68rem);
-  }
-  .cover_frame {
-    width: 76%;
-    height: 76%;
-  }
+
+/* ===== Páginas: tipografia proporcional à largura da página (1cqw = 1% dela) ===== */
+.page {
+  --fs-kicker: 2.65cqw;
+  --fs-h2: 7.4cqw;
+  --fs-dt: 2.7cqw;
+  --fs-dd: 4.1cqw;
+  --gap: 2.6cqw;
 }
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  .scroll-cue {
-    animation: none;
-  }
-  .book-stage {
-    height: auto;
-    padding: 40px 0;
-  }
-  .book-viewport {
-    position: static;
-    height: auto;
-  }
-  .book {
-    -open: 1;
-    transform: none;
-  }
-  .leaf-cover {
-    transform: rotateY(-180deg);
-  }
-  .book-caption {
-    display: none;
-  }
+.kicker {
+  display: block;
+  color: #92764f;
+  font:
+    600 var(--fs-kicker) "DM Sans",
+    sans-serif;
+  letter-spacing: 0.18em;
+}
+.page h2 {
+  margin: 2.2cqw 0 0;
+  font:
+    500 var(--fs-h2) / 1 "Cormorant Garamond",
+    serif;
+}
+.page h2 em {
+  color: #805337;
+}
+.page p {
+  margin: 0 0 2.4cqw;
+  color: #6f5b43;
+  font:
+    400 var(--fs-dd) / 1.36 "Cormorant Garamond",
+    serif;
+}
+.number {
+  position: absolute;
+  bottom: 4%;
+  right: 8%;
+  color: #987e58;
+  font:
+    500 3.4cqw "Cormorant Garamond",
+    serif;
+}
+.page-left .number {
+  right: auto;
+  left: 8%;
 }
 
-/* -- Conteúdo denso das páginas (seções do portfólio) -- */
-.page-dense h2 {
-  margin: 8px 0;
-  font-size: clamp(1rem, 2.1vw, 1.7rem);
-}
-.page-dense p {
-  max-width: none;
-  margin: 6px 0;
-  font-size: clamp(0.55rem, 0.95vw, 0.76rem);
-  line-height: 1.5;
-}
 .fields {
-  margin: 10px 0 0;
+  margin: 3cqw 0 0;
   display: grid;
-  gap: 7px;
+  gap: var(--gap);
 }
 .fields > div {
   min-width: 0;
@@ -358,77 +329,161 @@ body {
 .fields dt {
   color: #92764f;
   font:
-    600 clamp(0.4rem, 0.7vw, 0.54rem) "DM Sans",
+    600 var(--fs-dt) "DM Sans",
     sans-serif;
   letter-spacing: 0.08em;
 }
 .fields dd {
-  margin: 2px 0 0;
+  margin: 0.6cqw 0 0;
   color: #6f5b43;
   font:
-    400 clamp(0.55rem, 0.95vw, 0.76rem) / 1.45 "Cormorant Garamond",
+    400 var(--fs-dd) / 1.36 "Cormorant Garamond",
     serif;
+  overflow-wrap: break-word;
+}
+.fields a {
+  color: #805337;
+  text-underline-offset: 0.18em;
 }
 .skills {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 2px;
+  gap: 1cqw;
 }
 .skills li {
   display: flex;
   justify-content: space-between;
-  gap: 8px;
+  align-items: baseline;
+  gap: 3cqw;
 }
 .stars {
   color: #a8793f;
-  letter-spacing: 0.1em;
+  font-size: 3.4cqw;
+  letter-spacing: 0.08em;
   white-space: nowrap;
 }
-
-.presentation {
+.tags {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 1.4cqw;
+}
+.tags dt {
+  flex: 0 0 100%;
+}
+.tags dd {
+  margin: 0;
+  padding: 0.3cqw 2.2cqw;
+  border: 1px solid #92764f55;
+  border-radius: 99px;
+}
+.bullets dd + dd {
+  position: relative;
+  padding-left: 3.4cqw;
+}
+.bullets dd + dd::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  top: 0.3em;
+  color: #a8793f;
+  font-size: 0.7em;
 }
 
+/* Apresentação: a foto mantém a proporção original (1206×2144) */
+.presentation {
+  display: flex;
+  align-items: flex-start;
+  gap: 4.5cqw;
+  margin: 2.6cqw 0 1.6cqw;
+}
 .photo {
-  flex: 0 0 40%;
-  width: 40%;
-  max-width: 190px;
-  min-width: 0;
-  aspect-ratio: 3 / 4;
-  margin: 8px 0 4px;
-
-  display: grid;
-  place-items: center;
-
+  flex: 0 0 34%;
+  margin: 0 1cqw;
+  aspect-ratio: 1206 / 2144;
+  overflow: hidden;
+  background: #5c41231a;
   border: 1px solid #92764f66;
   outline: 1px solid #92764f33;
   outline-offset: 4px;
-
-  color: #987e58;
-  background: #5c41231a;
-  overflow: hidden;
 }
-
 .photo img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
 }
-
 .presentation-text {
   flex: 1 1 0;
   min-width: 0;
 }
+.presentation-text p {
+  font-size: calc(var(--fs-dd) * 0.86);
+}
 
-.presentation-text > .eyebrow {
-  font-size: clamp(0.38rem, 0.75vw, 0.58rem);
+/* Páginas de projetos */
+.project-detail .fields,
+.project-tech .fields {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap) 4cqw;
+}
+.project-detail .fields > div:first-child,
+.project-detail .fields > div:last-child,
+.project-tech .fields > div:first-child {
+  grid-column: 1 / -1;
+}
+.project-detail .fields > div:last-child dd {
+  margin: 0;
+}
+.project-detail .fields a {
+  display: block;
+  text-align: center;
+}
+.project-detail .fields img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 46cqw;
+  margin: 0 auto;
+  border: 1px solid #92764f55;
+  box-shadow: 0 0.6cqw 1.6cqw #3a2a1a40;
+}
+
+/* ===== Celular: livro grande e "câmera" em uma página por vez (ver js/book.js) ===== */
+@media (max-width: 600px) {
+  .book-viewport {
+    overflow: hidden;
+    perspective: 1700px;
+  }
+  .book-camera {
+    transform: translateX(-25%);
+  }
+  .book {
+    width: 184vw;
+    aspect-ratio: 6 / 5;
+    transform: rotateX(7deg) rotateZ(-1deg);
+  }
+  .page {
+    --fs-kicker: 3.3cqw;
+    --fs-h2: 8cqw;
+    --fs-dt: 3.45cqw;
+    --fs-dd: 4.9cqw;
+    --gap: 2.6cqw;
+  }
+  .project-detail .fields,
+  .project-tech .fields {
+    grid-template-columns: 1fr;
+  }
+  .project-detail .fields img {
+    max-height: 58cqw;
+  }
+  .book-caption {
+    font-size: 0.55rem;
+    bottom: 3svh;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -447,7 +502,10 @@ body {
     height: auto;
   }
   .book {
-    -open: 1;
+    --open: 1;
+    transform: none;
+  }
+  .book-camera {
     transform: none;
   }
   .leaf-cover {
@@ -457,428 +515,8 @@ body {
     display: none;
   }
 }
-
-/* ==========================================
-   RESPONSIVIDADE E ESCALA DO LIVRO
-========================================== */
-
-/* ---------- COMPUTADORES ---------- */
-
-@media (min-width: 601px) {
-  /* Textos principais */
-  .page-dense h2 {
-    margin: 12px 0;
-    font-size: clamp(1.45rem, 2.8vw, 2.4rem);
-    line-height: 1;
-  }
-
-  .page-dense p {
-    font-size: clamp(0.8rem, 1.25vw, 1.1rem);
-    line-height: 1.5;
-  }
-
-  /* Identificação das seções */
-  .kicker {
-    font-size: clamp(0.58rem, 0.95vw, 0.87rem);
-  }
-
-  /* Listas e informações */
-  .fields {
-    margin-top: 14px;
-    gap: 10px;
-  }
-
-  .fields dt {
-    font-size: clamp(0.58rem, 0.85vw, 0.78rem);
-  }
-
-  .fields dd {
-    font-size: clamp(0.8rem, 1.25vw, 1.1rem);
-    line-height: 1.45;
-    margin-top: 3px;
-  }
-
-  .skills {
-    gap: 4px;
-  }
-
-  .skills li {
-    gap: 12px;
-  }
-
-  .stars {
-    font-size: 0.9rem;
-  }
-
-  /* Imagens */
-  .page img {
-    display: block;
-    width: min(100%, 360px);
-    max-width: 100%;
-    max-height: 260px;
-    height: auto;
-    object-fit: contain;
-  }
-
-  .photo img {
-    width: 100%;
-    height: 100%;
-    max-height: none;
-    object-fit: cover;
-  }
-
-  /* Apresentação */
-  .presentation {
-    gap: 26px;
-  }
-
-  .presentation-text {
-    min-width: 0;
-  }
-
-  .presentation-text > .eyebrow {
-    display: block;
-    font-size: clamp(0.55rem, 0.95vw, 0.84rem);
-    line-height: 1.5;
-  }
-
-  /* Capa */
-  .leaf-cover .leaf_face {
-    border-width: 10px;
-  }
-
-  .ornament {
-    font-size: 1.74rem;
-    margin-bottom: 14px;
-  }
-
-  .cover_kicker {
-    font-size: clamp(0.55rem, 0.95vw, 0.84rem);
-  }
-
-  .cover_frame h2 {
-    margin: 26px 0;
-    font-size: clamp(2.89rem, 6vw, 6.08rem);
-  }
-
-  .cover_frame p {
-    font-size: clamp(0.84rem, 1.25vw, 1.19rem);
-  }
-
-  .year {
-    margin-top: 17px;
-    font-size: 0.8rem;
-  }
-
-  .rule {
-    width: 55px;
-  }
-
-  /* Detalhes */
-  .number {
-    font-size: 1rem;
-  }
-
-  .book-caption {
-    font-size: 0.84rem;
-  }
-}
-
-/* ---------- CELULARES ---------- */
-
-@media (max-width: 600px) {
-  /* Tamanho e aproveitamento da página */
+@media (prefers-reduced-motion: reduce) and (max-width: 600px) {
   .book {
     width: 94vw;
-  }
-
-  .page {
-    padding: 5% 5% 15%;
-
-    /* Permite ler conteúdos maiores */
-    overflow-x: hidden;
-
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-  }
-
-  /* Títulos */
-  .page-dense h2 {
-    font-size: clamp(0.92rem, 4vw, 1.2rem);
-    line-height: 1.08;
-    margin: 0.4rem 0 0.55rem;
-    overflow-wrap: anywhere;
-  }
-
-  /* Identificação das seções */
-  .kicker {
-    font-size: clamp(0.46rem, 1.8vw, 0.56rem);
-    letter-spacing: 0.12em;
-  }
-
-  /* Conteúdo */
-  .page-dense p {
-    font-size: 0.62rem;
-    line-height: 1.4;
-  }
-
-  .fields {
-    margin: 0.4rem 0 0;
-    gap: 0.45rem;
-  }
-
-  .fields dt {
-    font-size: clamp(0.49rem, 1.9vw, 0.58rem);
-    line-height: 1.2;
-  }
-
-  .fields dd {
-    font-size: clamp(0.58rem, 2.25vw, 0.68rem);
-    line-height: 1.35;
-    margin: 0.1rem 0 0;
-    overflow-wrap: anywhere;
-  }
-
-  /* Listas de habilidades */
-  .skills {
-    gap: 3px;
-  }
-
-  .skills li {
-    gap: 4px;
-    align-items: flex-start;
-    font-size: 0.56rem;
-  }
-
-  .stars {
-    font-size: 0.5rem;
-    letter-spacing: 0;
-  }
-
-  /* Imagens dos projetos */
-  .page img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    max-height: 100px;
-    height: auto;
-    object-fit: contain;
-  }
-
-  /* Foto da apresentação */
-  .presentation {
-    gap: 0.4rem;
-    align-items: flex-start;
-  }
-
-  .presentation-text {
-    min-width: 0;
-  }
-
-  .photo {
-    width: 28%;
-    flex: 0 0 28%;
-    overflow: hidden;
-  }
-
-  .photo img {
-    width: 100%;
-    height: 100%;
-    max-height: none;
-    object-fit: cover;
-  }
-
-  .presentation-text > .eyebrow {
-    display: block;
-    font-size: 0.52rem;
-    line-height: 1.3;
-  }
-
-  /* Outros detalhes */
-  .number {
-    font-size: 0.58rem;
-    right: 5%;
-    bottom: 3.5%;
-  }
-
-  .book-caption {
-    font-size: 0.5rem;
-    bottom: 3vh;
-  }
-
-  .cover_frame {
-    width: 76%;
-    height: 76%;
-    padding: 6px;
-  }
-
-  .cover_frame h2 {
-    font-size: clamp(1.4rem, 7vw, 2rem);
-    margin: 10px 0;
-  }
-
-  .cover_frame p {
-    font-size: 0.55rem;
-  }
-
-  .ornament {
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-  }
-
-  .year {
-    margin-top: 6px;
-    font-size: 0.45rem;
-  }
-}
-
-/* ==========================================
-   PÁGINAS DE PROJETOS
-========================================== */
-
-/* Detalhamento dos projetos */
-
-.project-detail .fields {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px 14px;
-}
-
-.project-detail .fields > div:first-child {
-  grid-column: 1 / -1;
-}
-
-.project-detail .fields > div:last-child {
-  grid-column: 1 / -1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.project-detail .fields > div:last-child dd {
-  margin: 0;
-}
-
-.project-detail .fields dt {
-  font-size: clamp(0.6rem, 0.85vw, 0.78rem);
-  margin-bottom: 3px;
-}
-
-.project-detail .fields dd {
-  font-size: clamp(0.74rem, 1.05vw, 0.94rem);
-  line-height: 1.3;
-}
-
-.project-detail .fields img {
-  display: block;
-  width: auto;
-  max-width: 48%;
-  max-height: 90px;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Páginas técnicas */
-
-.project-tech .fields {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 9px 14px;
-}
-
-.project-tech .fields > div:first-child {
-  grid-column: 1 / -1;
-}
-
-.project-tech .fields dt {
-  margin-bottom: 3px;
-}
-
-.project-tech .fields dd {
-  line-height: 1.35;
-}
-
-/* ==========================================
-   AJUSTES PARA CELULARES
-========================================== */
-
-@media (max-width: 600px) {
-  /* Projetos: uma coluna para descrições */
-  .project-detail .fields {
-    grid-template-columns: 1fr;
-    gap: 5px;
-  }
-
-  .project-detail .fields > div:first-child,
-  .project-detail .fields > div:last-child {
-    grid-column: auto;
-  }
-
-  .project-detail .fields dt {
-    font-size: 0.48rem;
-    margin-bottom: 1px;
-  }
-
-  .project-detail .fields dd {
-    font-size: 0.55rem;
-    line-height: 1.18;
-  }
-
-  .project-detail h2 {
-    font-size: 0.96rem;
-    line-height: 1;
-    margin: 5px 0;
-  }
-
-  .project-detail .fields img {
-    max-width: 60%;
-    max-height: 32px;
-  }
-
-  /* Tecnologias: organização compacta */
-  .project-tech .fields {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 5px 7px;
-  }
-
-  .project-tech .fields > div:first-child,
-  .project-tech .fields > div:nth-child(2),
-  .project-tech .fields > div:nth-child(3) {
-    grid-column: 1 / -1;
-  }
-
-  .project-tech .fields dt {
-    font-size: 0.46rem;
-    line-height: 1.15;
-  }
-
-  .project-tech .fields dd {
-    font-size: 0.53rem;
-    line-height: 1.2;
-  }
-
-  .project-tech .skills li {
-    font-size: 0.48rem;
-    gap: 2px;
-  }
-
-  .project-tech .stars {
-    font-size: 0.45rem;
-  }
-
-  /* Foto de apresentação */
-  .presentation {
-    gap: 8px;
-  }
-
-  .photo {
-    flex: 0 0 31%;
-    width: 31%;
-    max-width: none;
-  }
-
-  .presentation-text {
-    flex: 1;
-    min-width: 0;
   }
 }
