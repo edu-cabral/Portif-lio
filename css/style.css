@@ -437,55 +437,93 @@ body {
   }
 }
 
-/* =========================================
-   AJUSTE PROPORCIONAL DO LIVRO
-   Escala: 1.447x
-========================================= */
+/* ==========================================
+   RESPONSIVIDADE E ESCALA DO LIVRO
+========================================== */
+
+/* ---------- COMPUTADORES ---------- */
 
 @media (min-width: 601px) {
-  /* Páginas */
-  .page {
-    box-shadow: inset 0 0 32px #5c41231f;
+  /* Textos principais */
+  .page-dense h2 {
+    margin: 12px 0;
+    font-size: clamp(1.45rem, 2.8vw, 2.4rem);
+    line-height: 1;
   }
 
-  .page-right {
-    inset: 10px 12px 10px 0;
+  .page-dense p {
+    font-size: clamp(0.8rem, 1.25vw, 1.1rem);
+    line-height: 1.5;
   }
 
-  .page h2 {
-    margin: 20px 0;
-    font-size: clamp(1.95rem, 4.34vw, 4.05rem);
-  }
-
-  .page p {
-    max-width: 420px;
-    font-size: clamp(0.84rem, 1.52vw, 1.2rem);
-  }
-
+  /* Identificação das seções */
   .kicker {
-    font-size: clamp(0.61rem, 1.16vw, 0.87rem);
+    font-size: clamp(0.58rem, 0.95vw, 0.87rem);
   }
 
-  .number {
-    font-size: 1.01rem;
+  /* Listas e informações */
+  .fields {
+    margin-top: 14px;
+    gap: 10px;
+  }
+
+  .fields dt {
+    font-size: clamp(0.58rem, 0.85vw, 0.78rem);
+  }
+
+  .fields dd {
+    font-size: clamp(0.8rem, 1.25vw, 1.1rem);
+    line-height: 1.45;
+    margin-top: 3px;
+  }
+
+  .skills {
+    gap: 4px;
+  }
+
+  .skills li {
+    gap: 12px;
+  }
+
+  .stars {
+    font-size: 0.9rem;
+  }
+
+  /* Imagens */
+  .page img {
+    display: block;
+    width: min(100%, 360px);
+    max-width: 100%;
+    max-height: 260px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .photo img {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+  }
+
+  /* Apresentação */
+  .presentation {
+    gap: 26px;
+  }
+
+  .presentation-text {
+    min-width: 0;
+  }
+
+  .presentation-text > .eyebrow {
+    display: block;
+    font-size: clamp(0.55rem, 0.95vw, 0.84rem);
+    line-height: 1.5;
   }
 
   /* Capa */
   .leaf-cover .leaf_face {
     border-width: 10px;
-  }
-
-  .leaf-cover .leaf_face-front,
-  .leaf-cover .leaf_face-back {
-    box-shadow:
-      inset 0 0 0 3px rgba(190, 145, 86, 0.35),
-      inset 0 0 51px rgba(0, 0, 0, 0.35);
-  }
-
-  .cover_frame {
-    border-width: 1.45px;
-    outline-offset: 9px;
-    padding: 17px;
   }
 
   .ornament {
@@ -494,21 +532,16 @@ body {
   }
 
   .cover_kicker {
-    font-size: clamp(0.55rem, 1.09vw, 0.84rem);
+    font-size: clamp(0.55rem, 0.95vw, 0.84rem);
   }
 
   .cover_frame h2 {
     margin: 26px 0;
-    font-size: clamp(2.89rem, 7.24vw, 6.08rem);
-  }
-
-  .rule {
-    width: 55px;
-    margin: 7px 0 17px;
+    font-size: clamp(2.89rem, 6vw, 6.08rem);
   }
 
   .cover_frame p {
-    font-size: clamp(0.84rem, 1.45vw, 1.19rem);
+    font-size: clamp(0.84rem, 1.25vw, 1.19rem);
   }
 
   .year {
@@ -516,50 +549,165 @@ body {
     font-size: 0.8rem;
   }
 
-  /* Conteúdo mais denso */
-  .page-dense h2 {
-    margin: 12px 0;
-    font-size: clamp(1.45rem, 3.04vw, 2.46rem);
+  .rule {
+    width: 55px;
   }
 
+  /* Detalhes */
+  .number {
+    font-size: 1rem;
+  }
+
+  .book-caption {
+    font-size: 0.84rem;
+  }
+}
+
+/* ---------- CELULARES ---------- */
+
+@media (max-width: 600px) {
+  /* Tamanho e aproveitamento da página */
+  .book {
+    width: 94vw;
+  }
+
+  .page {
+    padding: 5% 5% 15%;
+
+    /* Permite ler conteúdos maiores */
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  /* Títulos */
+  .page-dense h2 {
+    font-size: clamp(0.92rem, 4vw, 1.2rem);
+    line-height: 1.08;
+    margin: 0.4rem 0 0.55rem;
+    overflow-wrap: anywhere;
+  }
+
+  /* Identificação das seções */
+  .kicker {
+    font-size: clamp(0.46rem, 1.8vw, 0.56rem);
+    letter-spacing: 0.12em;
+  }
+
+  /* Conteúdo */
   .page-dense p {
-    margin: 9px 0;
-    font-size: clamp(0.8rem, 1.38vw, 1.1rem);
-    line-height: 1.5;
+    font-size: 0.62rem;
+    line-height: 1.4;
   }
 
   .fields {
-    margin-top: 14px;
-    gap: 10px;
+    margin: 0.4rem 0 0;
+    gap: 0.45rem;
   }
 
   .fields dt {
-    font-size: clamp(0.58rem, 1.01vw, 0.78rem);
+    font-size: clamp(0.49rem, 1.9vw, 0.58rem);
+    line-height: 1.2;
   }
 
   .fields dd {
-    margin-top: 3px;
-    font-size: clamp(0.8rem, 1.38vw, 1.1rem);
+    font-size: clamp(0.58rem, 2.25vw, 0.68rem);
+    line-height: 1.35;
+    margin: 0.1rem 0 0;
+    overflow-wrap: anywhere;
   }
 
+  /* Listas de habilidades */
   .skills {
     gap: 3px;
   }
 
+  .skills li {
+    gap: 4px;
+    align-items: flex-start;
+    font-size: 0.56rem;
+  }
+
+  .stars {
+    font-size: 0.5rem;
+    letter-spacing: 0;
+  }
+
+  /* Imagens dos projetos */
+  .page img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Foto da apresentação */
   .presentation {
-    gap: 26px;
+    gap: 0.4rem;
+    align-items: flex-start;
+  }
+
+  .presentation-text {
+    min-width: 0;
   }
 
   .photo {
-    margin: 12px 0 6px;
+    width: 28%;
+    flex: 0 0 28%;
+    overflow: hidden;
+  }
+
+  .photo img {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
   }
 
   .presentation-text > .eyebrow {
-    font-size: clamp(0.55rem, 1.09vw, 0.84rem);
+    display: block;
+    font-size: 0.52rem;
+    line-height: 1.3;
   }
 
-  /* Legenda abaixo do livro */
+  /* Outros detalhes */
+  .number {
+    font-size: 0.58rem;
+    right: 5%;
+    bottom: 3.5%;
+  }
+
   .book-caption {
-    font-size: 0.84rem;
+    font-size: 0.5rem;
+    bottom: 3vh;
+  }
+
+  .cover_frame {
+    width: 76%;
+    height: 76%;
+    padding: 6px;
+  }
+
+  .cover_frame h2 {
+    font-size: clamp(1.4rem, 7vw, 2rem);
+    margin: 10px 0;
+  }
+
+  .cover_frame p {
+    font-size: 0.55rem;
+  }
+
+  .ornament {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+
+  .year {
+    margin-top: 6px;
+    font-size: 0.45rem;
   }
 }
