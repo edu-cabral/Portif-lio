@@ -17,6 +17,34 @@ body {
     #17130f;
   font-family: "DM Sans", sans-serif;
 }
+header {
+  background: #35180f;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+}
+header > nav {
+  display: flex;
+  justify-content: end;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+}
+nav > a {
+  font-size: 0.7rem;
+}
+header > .eyebrow {
+  font-size: large;
+}
+footer {
+  background: #35180f;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
 .intro,
 .afterword {
   min-height: 100vh;
@@ -455,6 +483,29 @@ body {
 
 /* ===== Celular: livro grande e "câmera" em uma página por vez (ver js/book.js) ===== */
 @media (max-width: 600px) {
+  header,
+  footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  header > nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav > a {
+    font-size: 0.65rem;
+  }
+
+  header > .eyebrow {
+    font-size: 1rem;
+    text-align: center;
+  }
   .book-viewport {
     overflow: hidden;
     perspective: 1700px;
@@ -529,18 +580,18 @@ body {
 .book_stack,
 .leaf,
 .leaf_face {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 /* As páginas permanecem interativas */
 .page {
-    pointer-events: auto;
+  pointer-events: auto;
 }
 
 /* Links recebem os cliques normalmente */
 .page a {
-    pointer-events: auto;
-    position: relative;
-    z-index: 10;
-    cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
 }

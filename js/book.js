@@ -73,3 +73,44 @@ addEventListener("resize", scheduleUpdate);
 reduceMotion.addEventListener("change", scheduleUpdate);
 mobileQuery.addEventListener("change", scheduleUpdate);
 updateBook();
+
+const pageSteps = {
+  apresentacao: 1,
+  projetos: 2,
+  curriculo: 6,
+  contatos: 7
+};
+
+document.querySelectorAll("header nav a, footer a").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const pageId = link.getAttribute("href").replace("#", "");
+
+    if (pageId === "header") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    const targetStep = pageSteps[pageId];
+
+    if (targetStep === undefined) return;
+
+    event.preventDefault();
+
+    const mobile = mobileQuery.matches;
+    const perLeaf = mobile ? 2 : 1;
+    const steps = N * perLeaf;
+
+    // Converte a página desejada em progresso de rolagem
+    const targetProgress = (targetStep / steps) * ACTIVE;
+
+    const stageTop = stage.getBoundingClientRect().top + window.scrollY;
+    const scrollDistance = stage.offsetHeight - window.innerHeight;
+
+    const targetScroll = stageTop + targetProgress * scrollDistance;
+
+    window.scrollTo({
+      top: targetScroll,
+      behavior: "smooth"
+    });
+  });
+});
