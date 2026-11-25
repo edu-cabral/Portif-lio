@@ -344,6 +344,7 @@ body {
 .fields a {
   color: #805337;
   text-underline-offset: 0.18em;
+  cursor: pointer;
 }
 .skills {
   list-style: none;
@@ -519,4 +520,27 @@ body {
   .book {
     width: 94vw;
   }
+}
+/* Estruturas decorativas do livro não capturam cliques */
+.book-camera,
+.book,
+.book_base,
+.book_back,
+.book_stack,
+.leaf,
+.leaf_face {
+    pointer-events: none;
+}
+
+/* As páginas permanecem interativas */
+.page {
+    pointer-events: auto;
+}
+
+/* Links recebem os cliques normalmente */
+.page a {
+    pointer-events: auto;
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
 }

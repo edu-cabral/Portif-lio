@@ -17,506 +17,663 @@
       <section class="book-stage" id="bookStage" aria-label="Abertura do livro">
         <div class="book-viewport">
           <div class="book-camera" id="bookCamera">
-<div class="book" id="book">
-            <!-- Metade direita fixa: contracapa, bloco de páginas e a página final (14). -->
-            <div class="book_base">
-              <div class="book_back"></div>
-              <div class="book_stack"></div>
-              <article class="page page-right page-dense">
-                <span class="kicker">ATÉ LOGO</span>
-                <h2>Obrigado por<br />virar as páginas.</h2>
-                <dl class="fields">
-                  <div>
-                    <dt>E-mail (opcional)</dt>
-                    <dd>[...]</dd>
-                  </div>
-                </dl>
-                <span class="number">14</span>
-              </article>
-            </div>
-            <!-- Folhas 1 a 6 (a ordem no DOM é a ordem de virada): frente = página direita da abertura i, verso = página esquerda da abertura i+1. -->
-            <!-- Folha 1: páginas 2 e 3 -->
-            <div class="leaf">
-              <div class="leaf_face leaf_face-front">
+            <div class="book" id="book">
+              <!-- Metade direita fixa: contracapa, bloco de páginas e a página final (14). -->
+              <div class="book_base">
+                <div class="book_back"></div>
+                <div class="book_stack"></div>
                 <article class="page page-right page-dense">
-                  <span class="kicker">OBJETIVOS</span>
-                  <h2>Para onde<br />estou indo.</h2>
+                  <span class="kicker">CONTATO</span>
+                  <h2>Entre em<br />Contato comigo.</h2>
                   <dl class="fields">
                     <div>
-                      <dt>Objetivos acadêmicos</dt>
-                      <dd>
-                        Desenvolver meu conhecimento sobre programação e
-                        encontrar uma área que me interesse mais.
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>Objetivos profissionais</dt>
-                      <dd>
-                        Conseguir um estágio para adquirir mais experiência com
-                        projetos.
-                      </dd>
-                    </div>
-                    <div class="tags">
-                      <dt>Áreas de interesse</dt>
-                      <dd>Desenvolvimento web.</dd>
-                      <dd>Ciência de Dados.</dd>
-                      <dd>Engenharia de Software.</dd>
-                      <dd>Inteligência Artificial.</dd>
-                    </div>
-                  </dl>
-                  <span class="number">02</span>
-                </article>
-              </div>
-              <div class="leaf_face leaf_face-back">
-                <article class="page page-left page-dense">
-                  <span class="kicker">PROJETOS</span>
-                  <h2>O que já<br />construí.</h2>
-                  <dl class="fields">
-                    <div>
-                      <dt>Acadêmicos (API)</dt>
-                      <dd>
-                        2 projetos desenvolvidos na FATEC com empresas
-                        parceiras.
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>Profissionais</dt>
-                      <dd>
-                        Ainda sem projetos. Esta parte será preenchida a partir
-                        do estágio.
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>Pessoais</dt>
-                      <dd>1 projeto.</dd>
-                    </div>
-                    <div>
-                      <dt>Níveis de habilidade</dt>
-                      <dd>
-                        ★ ouvi falar · ★★ básico · ★★★ com apoio · ★★★★ autônomo
-                        · ★★★★★ fluente
-                      </dd>
-                    </div>
-                  </dl>
-                  <span class="number">03</span>
-                </article>
-              </div>
-            </div>
-            <!-- Folha 2: páginas 4 e 5 -->
-            <div class="leaf">
-              <div class="leaf_face leaf_face-front">
-                <article class="page page-right page-dense">
-                  <span class="kicker">PROJETOS ACADÊMICOS</span>
-                  <h2>Trajetória<br />na FATEC</h2>
-                  <dl class="fields">
-                    <div>
-                      <dt>API 1 · 1° semestre</dt>
-                      <dd>Bot Gotinha — Cliente Interno</dd>
-                    </div>
-                    <div>
-                      <dt>API 2 · 2° semestre</dt>
-                      <dd>Landing Page — DM Card</dd>
-                    </div>
-                  </dl>
-                  <span class="number">04</span>
-                </article>
-              </div>
-              <div class="leaf_face leaf_face-back">
-                <article class="page page-left page-dense project-detail">
-                  <span class="kicker">PROJETO ACADÊMICO · API 1</span>
-                  <h2>Bot<br />Gotinha</h2>
-                  <dl class="fields">
-                    <div>
-                      <dt>Empresa parceira</dt>
-                      <dd>Cliente Interno</dd>
-                    </div>
-                    <div>
-                      <dt>Problema</dt>
-                      <dd>
-                        Informações sobre vacinação estavam dispersas e difíceis
-                        de localizar.
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>Solução desenvolvida</dt>
-                      <dd>
-                        Bot no Telegram que reúne informações de vacinação com
-                        web scraping e IA.
-                      </dd>
-                    </div>
-                    <div>
+                      <dt>Linkedin</dt>
                       <dd>
                         <a
-                          href="https://github.com/PI-Nexus/Projeto-Integrador-I"
-                          ><img src="./img/api1.png" alt="api1"
-                        /></a>
-                      </dd>
-                    </div>
-                  </dl>
-                  <span class="number">05</span>
-                </article>
-              </div>
-            </div>
-            <!-- Folha 3: páginas 6 e 7 -->
-            <div class="leaf">
-              <div class="leaf_face leaf_face-front">
-                <article class="page page-right page-dense project-tech">
-                  <span class="kicker">API 1 · EXECUÇÃO</span>
-                  <h2>Web Scraping + IA<br />Telegram como interface</h2>
-                  <dl class="fields">
-                    <div>
-                      <dt>Tecnologias</dt>
-                      <dd>
-                        Python · Telegram · Flask · pyTelegramBotAPI ·
-                        BeautifulSoup · Requests · Selenium · Ollama
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>Repositório</dt>
-                      <dd>
-                        <a
-                          href="https://github.com/PI-Nexus/Projeto-Integrador-I"
-                          >Acesse o repositório aqui!</a
+                          href="https://www.linkedin.com/in/eduardo-vital-cabral-529499312/"
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>Minhas contribuições</dt>
-                      <dd>
-                        Integração com IA, comandos por voz e sistema de
-                        notificações.
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>Hard skills</dt>
-                      <dd>
-                        <ul class="skills">
-                          <li>
-                            <span>Web Scraping</span
-                            ><span class="stars" aria-label="3 de 5"
-                              >★★★☆☆</span
-                            >
-                          </li>
-                          <li>
-                            <span>Prompt Engineering</span
-                            ><span class="stars" aria-label="2 de 5"
-                              >★★☆☆☆</span
-                            >
-                          </li>
-                          <li>
-                            <span>Processamento de Linguagem Natural</span
-                            ><span class="stars" aria-label="3 de 5"
-                              >★★★☆☆</span
-                            >
-                          </li>
-                        </ul>
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>Soft skills</dt>
-                      <dd>
-                        Comunicação · Resiliência · Resolução de problemas ·
-                        Empatia · Foco no usuário
-                      </dd>
-                    </div>
-                  </dl>
-                  <span class="number">06</span>
-                </article>
-              </div>
-              <div class="leaf_face leaf_face-back">
-                <article class="page page-left page-dense project-detail">
-                  <span class="kicker">PROJETO ACADÊMICO · API 2</span>
-                  <h2>Landing Page <br />DM Card</h2>
-                  <dl class="fields">
-                    <div>
-                      <dt>Empresa parceira</dt>
-                      <dd>DM Card</dd>
-                    </div>
-                    <div>
-                      <dt>Problema</dt>
-                      <dd>
-                        A DM Card precisava captar interessados e pré-qualificar
-                        pedidos de cartões.
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>Solução desenvolvida</dt>
-                      <dd>
-                        Landing page com formulário simples e painel para
-                        acompanhar solicitações e cadastrar lojas parceiras.
-                      </dd>
-                    </div>
-                    <div>
-                      <dd>
-                        <a
-                          href="https://github.com/PI-Nexus/Projeto-Integrador-II"
-                        >
-                          <img src="./img/api2.png" alt="api2" />
+                          Acesse meu LinkedIn!
                         </a>
                       </dd>
                     </div>
-                  </dl>
-                  <span class="number">07</span>
-                </article>
-              </div>
-            </div>
-            <!-- Folha 4: páginas 8 e 9 -->
-            <div class="leaf">
-              <div class="leaf_face leaf_face-front">
-                <article class="page page-right page-dense project-tech">
-                  <span class="kicker">API 2 · EXECUÇÃO</span>
-                  <h2>
-                    Backend com Python — Flask<br />Banco de Dados com MySQL
-                  </h2>
-                  <dl class="fields">
                     <div>
-                      <dt>Tecnologias</dt>
+                      <dt>Email</dt>
                       <dd>
-                        Python · Flask · HTML · CSS · JavaScript · Bootstrap ·
-                        MySQL · Docker
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>Repositório</dt>
-                      <dd>
-                        <a
-                          href="https://github.com/PI-Nexus/Projeto-Integrador-II"
-                          >Acesse o repositório aqui!</a
+                        <a href="mailto:eduvitalsupra@gmail.com"
+                          >eduvitalsupra@gmail.com</a
                         >
                       </dd>
-                    </div>
-                    <div>
-                      <dt>Minhas contribuições</dt>
-                      <dd>
-                        Scrum Master da equipe, criação do ambiente Docker, e
-                        Página de acesso administrativo e suas funções
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>Hard skills</dt>
-                      <dd>
-                        <ul class="skills">
-                          <li>
-                            <span
-                              >Front-End (HTML, CSS, JavaScript e
-                              Bootstrap)</span
-                            ><span class="stars" aria-label="3 de 5"
-                              >★★★☆☆</span
-                            >
-                          </li>
-                          <li>
-                            <span>Back-End (Python)</span
-                            ><span class="stars" aria-label="4 de 5"
-                              >★★★★☆</span
-                            >
-                          </li>
-                          <li>
-                            <span>Banco de Dados (MySQL)</span>
-                            <span class="stars" aria-label="3 de 5">★★★☆☆</span>
-                          </li>
-                        </ul>
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>Soft skills</dt>
-                      <dd>
-                        Comunicação · Resiliência · Resolução de problemas ·
-                        Empatia · Foco no usuário
-                      </dd>
-                    </div>
-                  </dl>
-                  <span class="number">08</span>
-                </article>
-              </div>
-              <div class="leaf_face leaf_face-back">
-                <article class="page page-left page-dense">
-                  <span class="kicker">PROJETO PESSOAL</span>
-                  <h2>Pokédex</h2>
-                  <dl class="fields">
-                    <div class="bullets">
-                      <dt>O que é</dt>
-                      <dd>
-                        um site baseado na franquia Pokémon, com o objetivo de
-                        entregar uma Pokédex com todos os Pokémons da franquia,
-                        contendo:
-                      </dd>
-                      <dd>Número da Pokédex</dd>
-                      <dd>Ícone da espécie</dd>
-                      <dd>Nome da espécie</dd>
-                      <dd>Tipo da espécie (Grama, Fogo, Água, etc.)</dd>
-                    </div>
-                    <div class="tags">
-                      <dt>Tecnologias</dt>
-                      <dd>HTML</dd>
-                      <dd>CSS</dd>
-                      <dd>JavaScript</dd>
-                      <dd>Bootstrap</dd>
-                      <dd>Python</dd>
-                      <dd>Flask</dd>
-                      <dd>MySQL</dd>
-                      <dd>AWS</dd>
-                    </div>
-                    <div>
-                      <dt>Repositório</dt>
-                      <dd>
-                        <a href="https://github.com/edu-cabral/projeto-pokedex"
-                          >Acesse o repositório aqui!</a
-                        >
-                      </dd>
-                    </div>
-                  </dl>
-                  <span class="number">09</span>
-                </article>
-              </div>
-            </div>
-            <!-- Folha 5: páginas 10 e 11 -->
-            <div class="leaf">
-              <div class="leaf_face leaf_face-front">
-                <article class="page page-right page-dense">
-                  <span class="kicker">COMPETÊNCIAS</span>
-                  <h2>O que este<br />projeto mostra</h2>
-                  <dl class="fields">
-                    <div>
-                      <dt>Hard skills</dt>
-                      <dd>
-                        <ul class="skills">
-                          <li>
-                            <span>[Habilidade]</span
-                            ><span class="stars" aria-label="3 de 5"
-                              >★★★☆☆</span
-                            >
-                          </li>
-                          <li>
-                            <span>[Habilidade]</span
-                            ><span class="stars" aria-label="4 de 5"
-                              >★★★★☆</span
-                            >
-                          </li>
-                        </ul>
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>Soft skills</dt>
-                      <dd>[...]</dd>
-                    </div>
-                  </dl>
-                  <span class="number">10</span>
-                </article>
-              </div>
-              <div class="leaf_face leaf_face-back">
-                <article class="page page-left page-dense">
-                  <span class="kicker">INFORMAÇÕES CURRICULARES</span>
-                  <h2>Formação<br />complementar</h2>
-                  <dl class="fields">
-                    <div>
-                      <dt>Certificações técnicas</dt>
-                      <dd>[...]</dd>
-                    </div>
-                    <div>
-                      <dt>Cursos de extensão</dt>
-                      <dd>[...]</dd>
-                    </div>
-                    <div>
-                      <dt>Idiomas</dt>
-                      <dd>[...]</dd>
-                    </div>
-                  </dl>
-                  <span class="number">11</span>
-                </article>
-              </div>
-            </div>
-            <!-- Folha 6: páginas 12 e 13 -->
-            <div class="leaf">
-              <div class="leaf_face leaf_face-front">
-                <article class="page page-right page-dense">
-                  <span class="kicker">PRODUÇÃO E EVENTOS</span>
-                  <h2>Além<br />da sala de aula</h2>
-                  <dl class="fields">
-                    <div>
-                      <dt>Participações em eventos</dt>
-                      <dd>[...]</dd>
-                    </div>
-                    <div>
-                      <dt>Apresentações de trabalhos</dt>
-                      <dd>[...]</dd>
-                    </div>
-                    <div>
-                      <dt>Artigos e publicações</dt>
-                      <dd>[...]</dd>
-                    </div>
-                  </dl>
-                  <span class="number">12</span>
-                </article>
-              </div>
-              <div class="leaf_face leaf_face-back">
-                <article class="page page-left page-dense">
-                  <span class="kicker">CONTATO</span>
-                  <h2>Vamos<br />conversar.</h2>
-                  <dl class="fields">
-                    <div>
-                      <dt>Redes sociais</dt>
-                      <dd>[Links]</dd>
                     </div>
                     <div>
                       <dt>GitHub</dt>
-                      <dd>[Link]</dd>
+                      <dd><a href="https://github.com/edu-cabral">Acesse meu Github!</a></dd>
                     </div>
                   </dl>
-                  <span class="number">13</span>
+                  <span class="number">14</span>
                 </article>
               </div>
-            </div>
-            <!-- Folha 0: capa (verso = página 01) -->
-            <div class="leaf leaf-cover" id="cover">
-              <div class="leaf_face leaf_face-front" aria-hidden="true">
-                <div class="cover_frame">
-                  <span class="ornament">✦</span
-                  ><span class="cover_kicker">PORTFÓLIO • DESENVOLVIMENTO</span>
-                  <h2>Eduardo<br /><em>Cabral</em></h2>
-                  <span class="rule"></span>
-                  <p>Uma coleção de ideias,<br />projetos e aprendizados.</p>
-                  <span class="year">2026</span>
+              <!-- Folhas 1 a 6 (a ordem no DOM é a ordem de virada): frente = página direita da abertura i, verso = página esquerda da abertura i+1. -->
+              <!-- Folha 1: páginas 2 e 3 -->
+              <div class="leaf">
+                <div class="leaf_face leaf_face-front">
+                  <article class="page page-right page-dense">
+                    <span class="kicker">OBJETIVOS</span>
+                    <h2>Para onde<br />estou indo.</h2>
+                    <dl class="fields">
+                      <div>
+                        <dt>Objetivos acadêmicos</dt>
+                        <dd>
+                          Desenvolver meu conhecimento sobre programação e
+                          encontrar uma área que me interesse mais.
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Objetivos profissionais</dt>
+                        <dd>
+                          Conseguir um estágio para adquirir mais experiência
+                          com projetos.
+                        </dd>
+                      </div>
+                      <div class="tags">
+                        <dt>Áreas de interesse</dt>
+                        <dd>Desenvolvimento web.</dd>
+                        <dd>Ciência de Dados.</dd>
+                        <dd>Engenharia de Software.</dd>
+                        <dd>Inteligência Artificial.</dd>
+                      </div>
+                    </dl>
+                    <span class="number">02</span>
+                  </article>
+                </div>
+                <div class="leaf_face leaf_face-back">
+                  <article class="page page-left page-dense">
+                    <span class="kicker">PROJETOS</span>
+                    <h2>O que já<br />construí.</h2>
+                    <dl class="fields">
+                      <div>
+                        <dt>Acadêmicos (API)</dt>
+                        <dd>
+                          2 projetos desenvolvidos na FATEC com empresas
+                          parceiras.
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Profissionais</dt>
+                        <dd>
+                          Ainda sem projetos. Esta parte será preenchida a
+                          partir do estágio.
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Pessoais</dt>
+                        <dd>1 projeto.</dd>
+                      </div>
+                      <div>
+                        <dt>Níveis de habilidade</dt>
+                        <dd>
+                          ★ ouvi falar · ★★ básico · ★★★ com apoio · ★★★★
+                          autônomo · ★★★★★ fluente
+                        </dd>
+                      </div>
+                    </dl>
+                    <span class="number">03</span>
+                  </article>
                 </div>
               </div>
-              <div class="leaf_face leaf_face-back">
-                <article class="page page-left page-dense">
-                  <span class="kicker">APRESENTAÇÃO</span>
-                  <h2>Eduardo<br />Vital Cabral</h2>
-                  <div class="presentation">
-                    <div class="photo">
-                      <img src="./img/foto.webp" alt="foto" />
+              <!-- Folha 2: páginas 4 e 5 -->
+              <div class="leaf">
+                <div class="leaf_face leaf_face-front">
+                  <article class="page page-right page-dense">
+                    <span class="kicker">PROJETOS ACADÊMICOS</span>
+                    <h2>Trajetória<br />na FATEC</h2>
+                    <dl class="fields">
+                      <div>
+                        <dt>API 1 · 1° semestre</dt>
+                        <dd>Bot Gotinha — Cliente Interno</dd>
+                      </div>
+                      <div>
+                        <dt>API 2 · 2° semestre</dt>
+                        <dd>Landing Page — DM Card</dd>
+                      </div>
+                    </dl>
+                    <span class="number">04</span>
+                  </article>
+                </div>
+                <div class="leaf_face leaf_face-back">
+                  <article class="page page-left page-dense project-detail">
+                    <span class="kicker">PROJETO ACADÊMICO · API 1</span>
+                    <h2>Bot<br />Gotinha</h2>
+                    <dl class="fields">
+                      <div>
+                        <dt>Empresa parceira</dt>
+                        <dd>Cliente Interno</dd>
+                      </div>
+                      <div>
+                        <dt>Problema</dt>
+                        <dd>
+                          Informações sobre vacinação estavam dispersas e
+                          difíceis de localizar.
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Solução desenvolvida</dt>
+                        <dd>
+                          Bot no Telegram que reúne informações de vacinação com
+                          web scraping e IA.
+                        </dd>
+                      </div>
+                      <div>
+                        <dd>
+                          <a
+                            href="https://github.com/PI-Nexus/Projeto-Integrador-I"
+                            ><img src="./img/api1.png" alt="api1"
+                          /></a>
+                        </dd>
+                      </div>
+                    </dl>
+                    <span class="number">05</span>
+                  </article>
+                </div>
+              </div>
+              <!-- Folha 3: páginas 6 e 7 -->
+              <div class="leaf">
+                <div class="leaf_face leaf_face-front">
+                  <article class="page page-right page-dense project-tech">
+                    <span class="kicker">API 1 · EXECUÇÃO</span>
+                    <h2>Web Scraping + IA<br />Telegram como interface</h2>
+                    <dl class="fields">
+                      <div class="tags">
+                        <dt>Tecnologias</dt>
+                        <dd>Python</dd>
+                        <dd>Telegram</dd>
+                        <dd>Flask</dd>
+                        <dd>pyTelegramBotAPI</dd>
+                        <dd>BeautifulSoup</dd>
+                        <dd>Requests</dd>
+                        <dd>Selenium</dd>
+                        <dd>Ollama</dd>
+                      </div>
+                      <div>
+                        <dt>Repositório</dt>
+                        <dd>
+                          <a
+                            href="https://github.com/PI-Nexus/Projeto-Integrador-I"
+                            >Acesse o repositório aqui!</a
+                          >
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Minhas contribuições</dt>
+                        <dd>
+                          Integração com IA, comandos por voz e sistema de
+                          notificações.
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Hard skills</dt>
+                        <dd>
+                          <ul class="skills">
+                            <li>
+                              <span>Web Scraping</span
+                              ><span class="stars" aria-label="3 de 5"
+                                >★★★☆☆</span
+                              >
+                            </li>
+                            <li>
+                              <span>Prompt Engineering</span
+                              ><span class="stars" aria-label="2 de 5"
+                                >★★☆☆☆</span
+                              >
+                            </li>
+                            <li>
+                              <span>Processamento de Linguagem Natural</span
+                              ><span class="stars" aria-label="3 de 5"
+                                >★★★☆☆</span
+                              >
+                            </li>
+                          </ul>
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Soft skills</dt>
+                        <dd>
+                          Comunicação · Resiliência · Resolução de problemas ·
+                          Empatia · Foco no usuário
+                        </dd>
+                      </div>
+                    </dl>
+                    <span class="number">06</span>
+                  </article>
+                </div>
+                <div class="leaf_face leaf_face-back">
+                  <article class="page page-left page-dense project-detail">
+                    <span class="kicker">PROJETO ACADÊMICO · API 2</span>
+                    <h2>Landing Page <br />DM Card</h2>
+                    <dl class="fields">
+                      <div>
+                        <dt>Empresa parceira</dt>
+                        <dd>DM Card</dd>
+                      </div>
+                      <div>
+                        <dt>Problema</dt>
+                        <dd>
+                          A DM Card precisava captar interessados e
+                          pré-qualificar pedidos de cartões.
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Solução desenvolvida</dt>
+                        <dd>
+                          Landing page com formulário simples e painel para
+                          acompanhar solicitações e cadastrar lojas parceiras.
+                        </dd>
+                      </div>
+                      <div>
+                        <dd>
+                          <a
+                            href="https://github.com/PI-Nexus/Projeto-Integrador-II"
+                          >
+                            <img src="./img/api2.png" alt="api2" />
+                          </a>
+                        </dd>
+                      </div>
+                    </dl>
+                    <span class="number">07</span>
+                  </article>
+                </div>
+              </div>
+              <!-- Folha 4: páginas 8 e 9 -->
+              <div class="leaf">
+                <div class="leaf_face leaf_face-front">
+                  <article class="page page-right page-dense project-tech">
+                    <span class="kicker">API 2 · EXECUÇÃO</span>
+                    <h2>
+                      Backend com Python — Flask<br />Banco de Dados com MySQL
+                    </h2>
+                    <dl class="fields">
+                      <div class="tags">
+                        <dt>Tecnologias</dt>
+                        <dd>Python</dd>
+                        <dd>Flask</dd>
+                        <dd>HTML</dd>
+                        <dd>CSS</dd>
+                        <dd>JavaScript</dd>
+                        <dd>Bootstrap</dd>
+                        <dd>MySQL</dd>
+                        <dd>Docker</dd>
+                      </div>
+                      <div>
+                        <dt>Repositório</dt>
+                        <dd>
+                          <a
+                            href="https://github.com/PI-Nexus/Projeto-Integrador-II"
+                            >Acesse o repositório aqui!</a
+                          >
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Minhas contribuições</dt>
+                        <dd>
+                          Scrum Master da equipe, criação do ambiente Docker, e
+                          Página de acesso administrativo e suas funções
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Hard skills</dt>
+                        <dd>
+                          <ul class="skills">
+                            <li>
+                              <span
+                                >Front-End (HTML, CSS, JavaScript e
+                                Bootstrap)</span
+                              ><span class="stars" aria-label="3 de 5"
+                                >★★★☆☆</span
+                              >
+                            </li>
+                            <li>
+                              <span>Back-End (Python)</span
+                              ><span class="stars" aria-label="4 de 5"
+                                >★★★★☆</span
+                              >
+                            </li>
+                            <li>
+                              <span>Banco de Dados (MySQL)</span>
+                              <span class="stars" aria-label="3 de 5"
+                                >★★★☆☆</span
+                              >
+                            </li>
+                          </ul>
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Soft skills</dt>
+                        <dd>
+                          Comunicação · Resiliência · Resolução de problemas ·
+                          Empatia · Foco no usuário
+                        </dd>
+                      </div>
+                    </dl>
+                    <span class="number">08</span>
+                  </article>
+                </div>
+                <div class="leaf_face leaf_face-back">
+                  <article class="page page-left page-dense">
+                    <span class="kicker">PROJETO PESSOAL</span>
+                    <h2>Pokédex</h2>
+                    <dl class="fields">
+                      <div class="bullets">
+                        <dt>O que é</dt>
+                        <dd>
+                          um site baseado na franquia Pokémon, com o objetivo de
+                          entregar uma Pokédex com todos os Pokémons da
+                          franquia, contendo:
+                        </dd>
+                        <dd>Número da Pokédex</dd>
+                        <dd>Ícone da espécie</dd>
+                        <dd>Nome da espécie</dd>
+                        <dd>Tipo da espécie (Grama, Fogo, Água, etc.)</dd>
+                      </div>
+                      <div class="tags">
+                        <dt>Tecnologias</dt>
+                        <dd>HTML</dd>
+                        <dd>CSS</dd>
+                        <dd>JavaScript</dd>
+                        <dd>Bootstrap</dd>
+                        <dd>Python</dd>
+                        <dd>Flask</dd>
+                        <dd>MySQL</dd>
+                        <dd>AWS</dd>
+                      </div>
+                      <div>
+                        <dt>Repositório</dt>
+                        <dd>
+                          <a
+                            href="https://github.com/edu-cabral/projeto-pokedex"
+                            >Acesse o repositório aqui!</a
+                          >
+                        </dd>
+                      </div>
+                    </dl>
+                    <span class="number">09</span>
+                  </article>
+                </div>
+              </div>
+              <!-- Folha 5: páginas 10 e 11 -->
+              <div class="leaf">
+                <div class="leaf_face leaf_face-front">
+                  <article class="page page-right page-dense project-detail">
+                    <span class="kicker">COMPETÊNCIAS</span>
+                    <h2>O que este<br />projeto mostra</h2>
+                    <dl class="fields">
+                      <div>
+                        <dt>Hard skills</dt>
+                        <dd>
+                          <ul class="skills">
+                            <li>
+                              <span
+                                >Front-End (HTML, CSS, JavaScript e
+                                Bootstrap)</span
+                              ><span class="stars" aria-label="3 de 5"
+                                >★★★☆☆</span
+                              >
+                            </li>
+                            <li>
+                              <span>Back-End (Python)</span
+                              ><span class="stars" aria-label="4 de 5"
+                                >★★★★☆</span
+                              >
+                            </li>
+                            <li>
+                              <span>Banco de Dados (MySQL)</span>
+                              <span class="stars" aria-label="3 de 5"
+                                >★★★☆☆</span
+                              >
+                            </li>
+                            <li>
+                              <span>Computação em nuvem (AWS)</span>
+                              <span class="stars" aria-label="2 de 5"
+                                >★★☆☆☆</span
+                              >
+                            </li>
+                          </ul>
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Soft skills</dt>
+                        <dd>
+                          Resiliência · Resolução de problemas · Empatia · Foco
+                          no usuário
+                        </dd>
+                      </div>
+                      <div>
+                        <dd>
+                          <a
+                            href="https://github.com/edu-cabral/projeto-pokedex"
+                          >
+                            <img src="./img/pokedex.png" alt="pokedex" />
+                          </a>
+                        </dd>
+                      </div>
+                    </dl>
+                    <span class="number">10</span>
+                  </article>
+                </div>
+                <div class="leaf_face leaf_face-back">
+                  <article class="page page-left page-dense">
+                    <span class="kicker">INFORMAÇÕES CURRICULARES</span>
+                    <h2>Formação<br />complementar</h2>
+                    <dl class="fields">
+                      <div>
+                        <dt>Certificações técnicas</dt>
+                        <dd>
+                          Técnico em Desenvolvimento de Sistemas - ETEC (2025)
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Cursos de extensão</dt>
+                        <dd>Oficina de Manutenção de PC's (2024)</dd>
+                        <dd>
+                          IT Essentials 7.01 - Cisco Networking Academy (2026)
+                        </dd>
+                      </div>
+                      <div class="tags">
+                        <dt>Idiomas</dt>
+                        <dd>Português - Fluente</dd>
+                        <dd>Inglês - Intermediário -> Avançado</dd>
+                      </div>
+                      <div class="tags">
+                        <dt>Linguagens</dt>
+                        <dd>
+                          <span>Python</span
+                          ><span class="stars" aria-label="4 de 5">★★★★☆</span>
+                        </dd>
+                        <dd>
+                          <span>C++</span
+                          ><span class="stars" aria-label="1 de 5">★☆☆☆☆</span>
+                        </dd>
+                        <dd>
+                          <span>JavaScript</span
+                          ><span class="stars" aria-label="2 de 5">★★☆☆☆</span>
+                        </dd>
+                        <dd>
+                          <span>PHP</span
+                          ><span class="stars" aria-label="4 de 5">★★★★☆</span>
+                        </dd>
+                        <dd>
+                          <span>Java</span
+                          ><span class="stars" aria-label="2 de 5">★★☆☆☆</span>
+                        </dd>
+                      </div>
+                      <div class="tags">
+                        <dt>Dados</dt>
+                        <dd>
+                          <span>MySQL</span
+                          ><span class="stars" aria-label="4 de 5">★★★★☆</span>
+                        </dd>
+                        <dd>
+                          <span>PostgreSQL</span
+                          ><span class="stars" aria-label="1 de 5">★☆☆☆☆</span>
+                        </dd>
+                        <dd>
+                          <span>MongoDB</span
+                          ><span class="stars" aria-label="1 de 5">★☆☆☆☆</span>
+                        </dd>
+                      </div>
+                      <div class="tags">
+                        <dt>Frameworks</dt>
+                        <dd>
+                          <span>Bootstrap</span
+                          ><span class="stars" aria-label="4 de 5">★★★★☆</span>
+                        </dd>
+                        <dd>
+                          <span>React</span
+                          ><span class="stars" aria-label="4 de 5">★☆☆☆☆</span>
+                        </dd>
+                        <dd>
+                          <span>Flask</span
+                          ><span class="stars" aria-label="3 de 5">★★★☆☆</span>
+                        </dd>
+                      </div>
+                    </dl>
+                    <span class="number">11</span>
+                  </article>
+                </div>
+              </div>
+              <!-- Folha 6: páginas 12 e 13 -->
+              <div class="leaf">
+                <div class="leaf_face leaf_face-front">
+                  <article class="page page-right page-dense">
+                    <span class="kicker">Informações Curriculares</span>
+                    <h2>Formação Complementar</h2>
+                    <dl class="fields">
+                      <div class="tags">
+                        <dt>Ferramentas</dt>
+                        <dd>
+                          <span>Git</span
+                          ><span class="stars" aria-label="3 de 5">★★★☆☆</span>
+                        </dd>
+                        <dd>
+                          <span>GitHub</span
+                          ><span class="stars" aria-label="3 de 5">★★★☆☆</span>
+                        </dd>
+                        <dd>
+                          <span>Docker</span
+                          ><span class="stars" aria-label="4 de 5">★★★★☆</span>
+                        </dd>
+                        <dd>
+                          <span>Figma</span
+                          ><span class="stars" aria-label="2 de 5">★★☆☆☆</span>
+                        </dd>
+                        <dd>
+                          <span>Jira</span
+                          ><span class="stars" aria-label="3 de 5">★★★☆☆</span>
+                        </dd>
+                      </div>
+                      <div class="tags">
+                        <dt>Infraestrutura</dt>
+                        <dd>
+                          <span>Windows</span
+                          ><span class="stars" aria-label="2 de 5">★★☆☆☆</span>
+                        </dd>
+                        <dd>
+                          <span>Linux - Ubuntu</span
+                          ><span class="stars" aria-label="3 de 5">★★★☆☆</span>
+                        </dd>
+                        <dd>
+                          <span>Redes</span
+                          ><span class="stars" aria-label="2 de 5">★★☆☆☆</span>
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Soft Skills</dt>
+                        <dd>Comunicação · Resiliência · Resolução de problemas ·
+                          Empatia · Foco no usuário</dd>
+                      </div>
+                    </dl>
+                    <span class="number">12</span>
+                  </article>
+                </div>
+                <div class="leaf_face leaf_face-back">
+                  <article class="page page-left page-dense">
+                    <span class="kicker">PRODUÇÃO E EVENTOS</span>
+                    <h2>Além<br />da sala de aula</h2>
+                    <dl class="fields">
+                      <div>
+                        <dt>Participações em eventos</dt>
+                        <dd>Innovation Week (2026) - Parque Tecnológico, São José dos Campos</dd>
+                      </div>
+                      <div>
+                        <dt>Apresentações de trabalhos</dt>
+                        <dd>GameHub - Site para divulgação de jogos relacionados a programação - Meu TCC do curso técnico</dd>
+                        <dd>Bot Gotinha - API do primeiro semestre da FATEC</dd>
+                        <dd>Landing Page - API do segundo semestre da FATEC</dd>
+                      </div>
+                      <div>
+                        <dt>Artigos e publicações</dt>
+                        <dd>Nenhum até o momento</dd>
+                      </div>
+                    </dl>
+                    <span class="number">13</span>
+                  </article>
+                </div>
+              </div>
+              <!-- Folha 0: capa (verso = página 01) -->
+              <div class="leaf leaf-cover" id="cover">
+                <div class="leaf_face leaf_face-front" aria-hidden="true">
+                  <div class="cover_frame">
+                    <span class="ornament">✦</span
+                    ><span class="cover_kicker"
+                      >PORTFÓLIO • DESENVOLVIMENTO</span
+                    >
+                    <h2>Eduardo<br /><em>Cabral</em></h2>
+                    <span class="rule"></span>
+                    <p>Uma coleção de ideias,<br />projetos e aprendizados.</p>
+                    <span class="year">2026</span>
+                  </div>
+                </div>
+                <div class="leaf_face leaf_face-back">
+                  <article class="page page-left page-dense">
+                    <span class="kicker">APRESENTAÇÃO</span>
+                    <h2>Eduardo<br />Vital Cabral</h2>
+                    <div class="presentation">
+                      <div class="photo">
+                        <img src="./img/foto.webp" alt="foto" />
+                      </div>
+                      <div class="presentation-text">
+                        <p>
+                          Atualmente curso o 2° semestre do curso de Análise e
+                          Desenvolvimento de Sistemas da FATEC de São José dos
+                          Campos. Atuo como Desenvolvedor Full-Stack,
+                          desenvolvendo aplicações e sites em busca de aprimorar
+                          meus conhecimentos e entregar boas experiências aos
+                          usuários de meus produtos.
+                        </p>
+                      </div>
                     </div>
                     <div class="presentation-text">
-                      <p>Atualmente curso o 2° semestre do curso de Análise e
-                        Desenvolvimento de Sistemas da FATEC de São José dos
-                        Campos. Atuo como Desenvolvedor Full-Stack,
-                        desenvolvendo aplicações e sites em busca de aprimorar
-                        meus conhecimentos e entregar boas experiências aos
-                        usuários de meus produtos.
+                      <p>
+                        Possuo experiência no desenvolvimento de aplicações com
+                        integração de inteligência artificial, buscando sempre
+                        implementar soluções que tragam valor ao projeto e me
+                        auxiliem na minha jornada profissional.
                       </p>
                     </div>
-                  </div>
-                  <div class="presentation-text">
-                    <p>Possuo experiência no desenvolvimento de aplicações com
-                      integração de inteligência artificial, buscando sempre
-                      implementar soluções que tragam valor ao projeto e me
-                      auxiliem na minha jornada profissional.
-                    </p>
-                  </div>
-                  <dl class="fields">
-                    <div>
-                      <dt>Formação atual</dt>
-                      <dd>
-                        Análise e Desenvolvimento de Sistemas — FATEC São José
-                        dos Campos, 2° Semestre
-                      </dd>
-                    </div>
-                  </dl>
-                  <span class="number">01</span>
-                </article>
+                    <dl class="fields">
+                      <div>
+                        <dt>Formação atual</dt>
+                        <dd>
+                          Análise e Desenvolvimento de Sistemas — FATEC São José
+                          dos Campos, 2° Semestre
+                        </dd>
+                      </div>
+                    </dl>
+                    <span class="number">01</span>
+                  </article>
+                </div>
               </div>
             </div>
-          </div>
           </div>
           <p class="book-caption">ROLE PARA ABRIR</p>
         </div>
